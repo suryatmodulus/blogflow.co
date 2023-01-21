@@ -60,14 +60,20 @@
       padding: 0px 50px;
     }
 
+    .large-text {
+      font-size: 50px;
+    }
+
     @media only screen and (max-width: 600px) {
       .center-box {
         padding: 0px 30px;
       }
+
+      .large-text {
+        font-size: 48px;
+      }
     }
-    .large-text {
-      font-size: 48px;
-    }
+
     .social-icons {
       position: absolute;
       padding: 2px;
@@ -80,6 +86,7 @@
       display: grid;
       place-items: center;
     }
+
     .link-text {
       display: flex;
       align-items: center;
@@ -90,7 +97,12 @@
     <div class="coming-soon">Coming Soon</div>
     <main class="center-box">
       <h1 class="large-text">
-        Super Fast, Globally Distributed, Customizable Blog in 90 seconds.
+        Super Fast, Globally Distributed, Customizable Blog in<br /><span
+          class="counter"
+          data-num="90"
+          >0</span
+        >
+        seconds.
       </h1>
     </main>
     <div class="social-icons">
@@ -114,5 +126,28 @@
         </span>
       </a>
     </div>
+    <script>
+      (function () {
+        const counters = document.querySelectorAll('.counter');
+        const speed = 100000;
+
+        counters.forEach((counter) => {
+          const animate = () => {
+            const value = +counter.getAttribute('data-num');
+            const data = +counter.innerText;
+
+            const time = value / speed;
+            if (data < value) {
+              counter.innerText = Math.ceil(data + time);
+              setTimeout(animate, 1);
+            } else {
+              counter.innerText = value;
+            }
+          };
+
+          animate();
+        });
+      })();
+    </script>
   </body>
 </html>
