@@ -99,6 +99,10 @@ a {
   height: min(100vh, 600px);
 }
 
+.powered-by {
+  font-size: 14px;
+}
+
 .cloudflare-logo {
-  height: 40px;
+  height: 36px;
 }
