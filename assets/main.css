@@ -99,6 +99,15 @@ a {
   height: min(100vh, 600px);
 }
 
+.cloudflare-box {
+  position: absolute;
+  margin: 20px 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
 .powered-by {
   font-size: 14px;
 }
