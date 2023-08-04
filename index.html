@@ -30,6 +30,12 @@
           >
           seconds. -->
           Blogging Simplified. Also Affordable.
+          <br>
+          <span>$</span>
+          <span
+            class="counter"
+            data-num="5"
+            ></span>
         </h1>
       </div>
     </main>
@@ -130,7 +136,7 @@
     <script>
       (function () {
         const counters = document.querySelectorAll('.counter');
-        const speed = 100000;
+        const speed = 1000;
 
         counters.forEach((counter) => {
           const animate = () => {
